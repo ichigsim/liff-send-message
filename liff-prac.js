@@ -22,9 +22,6 @@ function initializeApp(data) {
 
 
       document.getElementById('sendmessage').addEventListener('click', function () {
-        output = document.getElementById("output");
-        textbox = document.getElementById("input");
-        output.innerText = textbox.value;
         liff.sendMessages({
             type: 'text',
             text:  "test"
@@ -35,11 +32,15 @@ function initializeApp(data) {
         });
     });
 
+    output = document.getElementById("output");
+    textbox = document.getElementById("input");
+    output.innerText = textbox.value;
+
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([{
             type: 'text',
-            text: "You've successfully sent a message! Hooray!"
+            text: output.value
         }, {
             type: 'sticker',
             packageId: '2',
