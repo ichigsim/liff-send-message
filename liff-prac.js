@@ -21,18 +21,18 @@ function initializeApp(data) {
       }
 
 
-      document.getElementById('sendmessage').addEventListener('click', function () {
-        output = document.getElementById("output");
-        textbox = document.getElementById("input");
-        output.innerText = textbox.value;
-        liff.sendMessages({
+      document.getElementById('sendmessagebutton').addEventListener('click', function () {
+        liff.sendMessages([{
             type: 'text',
-            text:  "test"
-        }).then(function () {
-            window.alert("メッセージを送信しました！");
+            text: "You've successfully sent a message! Hooray!"
+        }, {
+            type: 'sticker',
+            packageId: '2',
+            stickerId: '144'
+        }]).then(function () {
+            window.alert("Message sent");
         }).catch(function (error) {
-            window.alert("エラーは次のようになります: " + error);
+            window.alert("Error sending message: " + error);
         });
     });
-
-};
+}
