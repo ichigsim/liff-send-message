@@ -8,8 +8,8 @@ function initializeApp(data) {
 
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         output = document.getElementById("output");
-        textbox = document.getElementById("input");
-        output.innerText = textbox.value;
+        // textbox = document.getElementById("input");
+        // output.innerText = textbox.value;
         liff.sendMessages([{
             type: 'text',
             text: output.textContent
