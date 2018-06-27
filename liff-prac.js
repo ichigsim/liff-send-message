@@ -12,7 +12,7 @@ function initializeApp(data) {
         output.innerText = textbox.value;
         liff.sendMessages([{
             type: 'text',
-            text: "taro" + output.value + "tanaka"
+            text: "taro " + output.textContent + " tanaka"
         }]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
