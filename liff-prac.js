@@ -16,7 +16,7 @@ function initializeApp(data) {
         })
         liff.sendMessages([{
             type: 'text',
-            text: "You've successfully sent a message! Hooray!"
+            text: "You've successfully sent a message! Hooray!" + output.textContent
         }]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
