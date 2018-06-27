@@ -18,10 +18,25 @@ function initializeApp(data) {
         }).catch((err) => {
             window.alert("エラーは次のようになります: " + err);
         });
-      }
+    }
 
 
-      document.getElementById('sendmessagebutton').addEventListener('click', function () {
+      document.getElementById('sendmessage').addEventListener('click', function () {
+        output = document.getElementById("output");
+        textbox = document.getElementById("input");
+        output.innerText = textbox.value;
+        liff.sendMessages({
+            type: 'text',
+            text:  "test"
+        }).then(function () {
+            window.alert("メッセージを送信しました！");
+        }).catch(function (error) {
+            window.alert("エラーは次のようになります: " + error);
+        });
+    });
+
+    // sendMessages call
+    document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([{
             type: 'text',
             text: "You've successfully sent a message! Hooray!"
@@ -35,4 +50,5 @@ function initializeApp(data) {
             window.alert("Error sending message: " + error);
         });
     });
+
 }
