@@ -12,7 +12,7 @@ function initializeApp(data) {
         output.innerText = textbox.value;
         const json = JSON.stringify({
             type: 'text',
-            text: "taro "
+            text: "You've successfully sent a message! Hooray!"
         })
         liff.sendMessages([json]).then(function () {
             liff.closeWindow()
