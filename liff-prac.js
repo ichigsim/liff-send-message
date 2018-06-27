@@ -38,15 +38,11 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-        liff.sendMessages([{
+        liff.sendMessages({
             type: 'text',
             text: "" + output.value + ""
-        }, {
-            type: 'sticker',
-            packageId: '2',
-            stickerId: '144'
-        }]).then(function () {
-            window.alert("Message");
+        }).then(function () {
+            liff.closeWindow()
         }).catch(function (error) {
             window.alert("Error: " + error);
         });
