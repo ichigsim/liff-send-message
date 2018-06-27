@@ -12,9 +12,12 @@ function initializeApp(data) {
         output.innerText = textbox.value;
         const json = JSON.stringify({
             type: 'text',
-            text: "You've successfully sent a message! Hooray!"
+            text: "You've successfully sent a message! Hooray!" + output.textContent
         })
-        liff.sendMessages([json]).then(function () {
+        liff.sendMessages([{
+            type: 'text',
+            text: "You've successfully sent a message! Hooray!"
+        }]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
             window.alert("エラーは次のようになります: " + error);
