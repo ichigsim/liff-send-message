@@ -10,7 +10,7 @@ function initializeApp(data) {
         output = document.getElementById("output");
         textbox = document.getElementById("input");
         output.innerText = textbox.value;
-        var json = JSON.stringify({
+        const json = JSON.stringify({
             type: 'text',
             text: "taro " + output.textContent + " tanaka"
         })
