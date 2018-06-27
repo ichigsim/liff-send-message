@@ -10,11 +10,11 @@ function initializeApp(data) {
         output = document.getElementById("output");
         textbox = document.getElementById("input");
         output.innerText = textbox.value;
-        var send_json = JSON.stringify({
+        var json = JSON.stringify({
             type: 'text',
-            text: "" + output.textContent + ""
+            text: "taro " + output.textContent + " tanaka"
         })
-        liff.sendMessages([send_json]).then(function () {
+        liff.sendMessages([json]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
             window.alert("エラーは次のようになります: " + error);
