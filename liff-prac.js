@@ -38,10 +38,10 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-        liff.sendMessages({
+        liff.sendMessages([{
             type: 'text',
             text: "" + output.value + ""
-        }).then(function () {
+        }]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
             window.alert("Error: " + error);
