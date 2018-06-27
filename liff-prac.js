@@ -40,15 +40,15 @@ function initializeApp(data) {
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([{
             type: 'text',
-            text: output.value
+            text: "" + output.value + ""
         }, {
             type: 'sticker',
             packageId: '2',
             stickerId: '144'
         }]).then(function () {
-            window.alert("Message sent");
+            window.alert("Message");
         }).catch(function (error) {
-            window.alert("Error sending message: " + error);
+            window.alert("Error: " + error);
         });
     });
 
