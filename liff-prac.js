@@ -27,7 +27,7 @@ function initializeApp(data) {
         output.innerText = textbox.value;
         liff.sendMessages({
             type: 'text',
-            text: "' + textbox + '"
+            text:  textbox.value
         }).then(function () {
             window.alert("メッセージを送信しました！");
         }).catch(function (error) {
@@ -36,4 +36,3 @@ function initializeApp(data) {
     });
 
 };
-
