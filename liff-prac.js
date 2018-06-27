@@ -40,7 +40,7 @@ function initializeApp(data) {
         output.innerText = textbox.value;
         liff.sendMessages([{
             type: 'text',
-            text: output.value
+            text: "" + output.value + ""
         }]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
