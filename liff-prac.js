@@ -32,15 +32,15 @@ function initializeApp(data) {
         });
     });
 
-    output = document.getElementById("output");
-    textbox = document.getElementById("input");
-    output.innerText = textbox.value;
-
+    
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
+        output = document.getElementById("output");
+        textbox = document.getElementById("input");
+        output.innerText = textbox.value;
         liff.sendMessages([{
             type: 'text',
-            text: "" + output.value + ""
+            text: output.value
         }]).then(function () {
             liff.closeWindow()
         }).catch(function (error) {
